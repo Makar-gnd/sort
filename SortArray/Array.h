@@ -103,7 +103,7 @@ std::vector<int> InsertSort(const std::vector<int>& data, int& counter)
 	std::vector<int> sortedArr = data; 
 	auto n = sortedArr.size();
 
-	for (int i = 1; i < n; ++i)
+	for (size_t i = 1; i < n; ++i)
 	{
 		int key = sortedArr[i];
 		int j = i - 1;
@@ -131,9 +131,9 @@ std::vector<int> BubbleSort(const std::vector<int>& data, int& swap_count)
     auto n = sortedArr.size();
     bool swapped = true; // Изначально предполагаем, что произошли обмены
 
-    for (int i = 0; i < n - 1 && swapped; ++i) { // Цикл продолжается пока swapped = true
+    for (size_t i = 0; i < n - 1 && swapped; ++i) { // Цикл продолжается пока swapped = true
         swapped = false; // Сбрасываем флаг в начале каждого прохода
-        for (int j = 0; j < n - i - 1; ++j) {
+        for (size_t j = 0; j < n - i - 1; ++j) {
             if (sortedArr[j] > sortedArr[j + 1]) {
                 std::swap(sortedArr[j], sortedArr[j + 1]);
                 swapped = true; // Если произошел обмен, устанавливаем флаг
