@@ -70,6 +70,7 @@ bool isPrimeLucas(long long n)
     // Обработка тривиальных случаев
     if (n < 2) return false;
     if (n == 2) return true;
+    if (n % 2 == 0) return false; // все четные кроме 2 - составные 
 
     // Факторизация n - 1
     long long n_minus_1 = n - 1;
