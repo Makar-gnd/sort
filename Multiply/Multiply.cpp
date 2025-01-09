@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 using namespace std;
 
+size_t comparisonCount = 0;
 /**
  * Функция для подсчёта количества цифр в числе.
  *
@@ -43,6 +44,7 @@ size_t intPow(size_t base, size_t exp)
  * @return Результат умножения FirstNumber на SecondNumber.
  */
 size_t karatsuba(size_t FirstNumber, size_t SecondNumber) {
+    comparisonCount++;
     // Базовый случай для прекращения рекурсии
     if (FirstNumber < 10 || SecondNumber < 10)
         return FirstNumber * SecondNumber;
@@ -83,6 +85,6 @@ int main() {
 
     // Вывод результата умножения
     cout << "Результат умножения: " << karatsuba(FirstNumber, SecondNumber) << endl;
-
+    cout << "Количество сравнений: " << comparisonCount << endl;
     return 0;
 }
